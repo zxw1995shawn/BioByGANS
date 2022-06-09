@@ -22,7 +22,7 @@ $ git clone https://github.com/zxw1995shawn/BioByGANS.git
 $ cd BioByGANS
 $ pip install -r requirements.txt
 ```
-The model can also be implemented in CPU environment,just throuth changing the tensorflow as a CPU version.
+The model can also be implemented in CPU environment, just through changing the tensorflow as a CPU version.
 
 ## Inplementing BioNER
 We take the chemical NER on BC5CDR-disease as an example in this section. Setting several environment variables as:
