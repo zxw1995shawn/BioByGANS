@@ -34,11 +34,11 @@ $ mkdir -p OUTPUT_DIR
 ```
 Following command runs NER code:
 ```bash
-$ python run_gat_ner_wordpiece_optional.py --do_train=true --do_eval=true --do_predict=true --vocab_file=$BIOBERT_DIR/vocab.txt --bert_config_file=$BIOBERT_DIR/bert_config.json --init_checkpoint=$BIOBERT_DIR/model.ckpt-1000000 --num_train_epochs=50.0 --max_seq_length=256 --train_batch_size=32 --learning_rate=3e-5 num_gat_heads=12 num_gat_units=64 --data_dir=$NER_DIR --output_dir=$OUTPUT_DIR
+$ python run_BioByGANS.py --do_train=true --do_eval=true --do_predict=true --vocab_file=$BIOBERT_DIR/vocab.txt --bert_config_file=$BIOBERT_DIR/bert_config.json --init_checkpoint=$BIOBERT_DIR/model.ckpt-1000000 --num_train_epochs=50.0 --max_seq_length=256 --train_batch_size=32 --learning_rate=3e-5 num_gat_heads=12 num_gat_units=64 --data_dir=$NER_DIR --output_dir=$OUTPUT_DIR
 ```
 If you use CPUs to run this project, corresponding command is as follows:
 ```bash
-$ python run_gat_ner_wordpiece_optional_cpu.py --do_train=true --do_eval=true --do_predict=true --vocab_file=$BIOBERT_DIR/vocab.txt --bert_config_file=$BIOBERT_DIR/bert_config.json --init_checkpoint=$BIOBERT_DIR/model.ckpt-1000000 --num_train_epochs=50.0 --max_seq_length=256 --train_batch_size=32 --learning_rate=3e-5 num_gat_heads=12 num_gat_units=64 --data_dir=$NER_DIR --output_dir=$OUTPUT_DIR
+$ python run_BioByGANS_cpu.py --do_train=true --do_eval=true --do_predict=true --vocab_file=$BIOBERT_DIR/vocab.txt --bert_config_file=$BIOBERT_DIR/bert_config.json --init_checkpoint=$BIOBERT_DIR/model.ckpt-1000000 --num_train_epochs=50.0 --max_seq_length=256 --train_batch_size=32 --learning_rate=3e-5 num_gat_heads=12 num_gat_units=64 --data_dir=$NER_DIR --output_dir=$OUTPUT_DIR
 ```
 After training, developing and testing, Use `./biocodes/ner_detokenize.py` to obtain word-level prediction file, and use `./biocodes/conlleval.pl` to get results.
 ```bash
